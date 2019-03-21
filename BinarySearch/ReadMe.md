@@ -1,14 +1,11 @@
-# ***Data Structure Implementation README Example***
-------------------------------
-
-# Linked List
-#### *Author: Severus Snape*
+# Array Binary Search
+#### Author: Daniel Logerstedt
 
 ------------------------------
 
 ## Description
 
-A C# implementation of a 
+A C# implementation of a binary search method for arrays
 
 ------------------------------
 
