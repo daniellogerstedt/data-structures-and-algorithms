@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using BinarySearch;
 
 namespace BinarySearchTests
 {
@@ -12,9 +13,8 @@ namespace BinarySearchTests
         [InlineData(-99, new int[]{-100, -99, -98, -20, -10, -9, 0, 15, 22, 37, 44, 53, 60, 90, 99, 100 }, 1)]
         public void ArrayBinarySearchTestValidOutputForInputs(int key, int[] array, int expected)
         {
-            int location = BinarySearch(array, key);
+            int location = Program.BinarySearch(array, key);
             Assert.Equal(expected, location);
-
         }
     }
 }
