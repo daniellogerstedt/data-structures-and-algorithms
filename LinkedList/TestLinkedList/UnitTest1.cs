@@ -21,12 +21,36 @@ namespace TestLinkedList
             Assert.Null(listToTest.head);
         }
 
-        [Fact]
-        public void TestAddNodeToLinkedList()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(10)]
+        [InlineData(41)]
+        [InlineData(31)]
+        [InlineData(151)]
+        public void TestAddNodeToLinkedList(int value)
         {
             LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
-            listToTest.Insert(1);
-            Assert.Equal(1, listToTest.head.value);
+            listToTest.Insert(value);
+            Assert.Equal(value, listToTest.head.value);
         }
+
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(3, 2, 1)]
+        [InlineData(200, 100, 300)]
+        public void TestMultipleInsertions(int v1, int v2, int v3)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(v1);
+            listToTest.Insert(v2);
+            listToTest.Insert(v3);
+
+            Assert.Equal(v3, listToTest.head.value);
+            Assert.Equal(v2, listToTest.head.next.value);
+            Assert.Equal(v1, listToTest.head.next.next.value);
+
+        }
+
+
     }
 }
