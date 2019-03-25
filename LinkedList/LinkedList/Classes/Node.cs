@@ -7,8 +7,8 @@ namespace LinkedList.Classes
     public class Node
     {
 
-        public Node next { get; set; }
-        public int value { get; set; }
+        public Node Next { get; set; }
+        public int Value { get; set; }
 
         /// <summary>
         /// Constructor that requires only a value and sets the next to null.
@@ -16,8 +16,8 @@ namespace LinkedList.Classes
         /// <param name="value">Value to be stored in the node.</param>
         public Node(int value)
         {
-            this.next = null;
-            this.value = value;
+            this.Next = null;
+            this.Value = value;
         }
 
         /// <summary>
@@ -27,8 +27,8 @@ namespace LinkedList.Classes
         /// <param name="next">Node to be set as the next node.</param>
         public Node(int value, Node next)
         {
-            this.next = next;
-            this.value = value;
+            this.Next = next;
+            this.Value = value;
         }
     }
 }
