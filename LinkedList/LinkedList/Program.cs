@@ -43,7 +43,7 @@ namespace LinkedList
             Console.WriteLine($"testTrue should be true, testTrue: {testTrue}");
             Console.WriteLine("bool testFalse = linkedlist.Includes(99)");
             bool testFalse = linkedlist.Includes(99);
-            Console.WriteLine($"testFalse should be False, testFalse: {testTrue}");
+            Console.WriteLine($"testFalse should be False, testFalse: {testFalse}");
 
             Console.WriteLine("Press Enter to continue.");
             Console.ReadLine();
