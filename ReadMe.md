@@ -7,3 +7,4 @@ This repository is a collection of different data structure and algorithm code c
 ## Table of Contents
 
 * ![Binary Search of Arrays](./BinarySearch/ReadMe.md)
+* [LinkedList](./LinkedList/ReadMe.md)
