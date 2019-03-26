@@ -83,6 +83,72 @@ namespace LinkedList.Classes
             }
             return arr;
         }
+        
+        
+        /// <summary>
+        /// This method takes in a given value and appends it to the end of the Linked List as a new Node containing that value.
+        /// </summary>
+        /// <param name="value">The value to place in the new Node.</param>
+        public void Append(int value)
+        {
+            if (this.Head == null) this.Head = new Node(value);
+            else
+            {
+                Node curr = this.Head;
+                while (curr.Next != null)
+                {
+                    curr = curr.Next;
+                }
+                curr.Next = new Node(value);
+            }
+        }
+
+
+        /// <summary>
+        /// Inserts a Node containing the first given value before the first Node containing the second given value.
+        /// </summary>
+        /// <param name="value">The value being placed in the new node.</param>
+        /// <param name="before">The value of the node the new node is placed before.</param>
+        public void InsertBefore(int value, int before)
+        {
+            if (!Includes(before)) Append(value);
+            else
+            {
+                if (this.Head.Value == before) Insert(value);
+                else
+                {
+                    Node curr = this.Head.Next;
+                    Node prev = this.Head;
+                    while (curr.Value != before)
+                    {
+                        prev = curr;
+                        curr = curr.Next;
+                    }
+
+                    prev.Next = new Node(value, curr);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Places a node containing the first given value after the first node containing the second given value.
+        /// </summary>
+        /// <param name="value">The value being placed in the new node.</param>
+        /// <param name="after">The value of the node to place the new node after.</param>
+        public void InsertAfter(int value, int after)
+        {
+            if (!Includes(after)) Append(value);
+            else
+            {
+                Node curr = this.Head;
+                while (curr.Value != after)
+                {
+                    curr = curr.Next;
+                }
+                curr.Next = new Node(value, curr.Next);
+            }
+        }
 
 
     }
