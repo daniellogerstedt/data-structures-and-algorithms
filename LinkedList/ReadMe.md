@@ -57,3 +57,4 @@ Print first calls the Length method to get the length, it then makes an array of
 ------------------------------
 
 ## Change Log
+1.1: Added Append, InsertBefore, and InsertAfter methods as part of Code Challenge 06
