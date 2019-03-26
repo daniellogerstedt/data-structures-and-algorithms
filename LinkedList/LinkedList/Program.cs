@@ -14,30 +14,48 @@ namespace LinkedList
             Console.ReadLine();
             Console.Clear();
 
-            bool haveInput = false;
-            int inputNum = 0;
-            while (!haveInput)
-            {
-                Console.WriteLine("Enter a integer to insert");
-                string input = Console.ReadLine();
-                haveInput = int.TryParse(input, out inputNum);
-            }
-
             Console.WriteLine("Insert Method");
-            Console.WriteLine("linkedlist.Insert(inputNum);");
-            linkedlist.Insert(inputNum);
+            Console.WriteLine("linkedlist.Insert(87);");
+            linkedlist.Insert(87);
             Console.WriteLine($"linkedlist.Head.Value: {linkedlist.Head.Value}");
             Console.WriteLine("Press Enter to continue.");
             Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("Adding other values to linkedlist: 55, 87, 33, 42");
-            linkedlist.Insert(55);
-            linkedlist.Insert(87);
-            linkedlist.Insert(33);
-            linkedlist.Insert(42);
+
+
+            Console.WriteLine("Append Method");
+            Console.WriteLine("linkedlist.Append(42);");
+            linkedlist.Append(42);
+            Console.WriteLine($"linkedlist.Head.Value: {linkedlist.Head.Value}");
+            Console.WriteLine($"linkedlist.Head.Next.Value: {linkedlist.Head.Next.Value}");
+            Console.WriteLine("Press Enter to continue.");
+            Console.ReadLine();
+
+            Console.Clear();
+
+            Console.WriteLine("InsertBefore Method");
+            Console.WriteLine("linkedlist.InsertBefore(33, 42);");
+            linkedlist.InsertBefore(33, 42);
+            Console.WriteLine($"linkedlist.Head.Next.Value: {linkedlist.Head.Next.Value}");
+            Console.WriteLine($"linkedlist.Head.Next.Next.Value: {linkedlist.Head.Next.Next.Value}");
+            Console.WriteLine("Press Enter to continue.");
+            Console.ReadLine();
+
+            Console.Clear();
+
+            Console.WriteLine("InsertAfter Method");
+            Console.WriteLine("linkedlist.InsertAfter(55, 87);");
+            linkedlist.InsertAfter(55, 87);
+            Console.WriteLine($"linkedlist.Head.Value: {linkedlist.Head.Value}");
+            Console.WriteLine($"linkedlist.Head.Next.Value: {linkedlist.Head.Next.Value}");
+            Console.WriteLine("Press Enter to continue.");
+            Console.ReadLine();
+
+            Console.Clear();
+
             Console.WriteLine("Includes Method");
-            Console.WriteLine($"linkedlist should contain the following values in nodes: {inputNum}, 55, 87, 33, 42");
+            Console.WriteLine("linkedlist should contain the following values in nodes: 87, 55, 33, 42");
             Console.WriteLine("bool testTrue = linkedlist.Includes(55)");
             bool testTrue = linkedlist.Includes(55);
             Console.WriteLine($"testTrue should be true, testTrue: {testTrue}");
@@ -51,7 +69,7 @@ namespace LinkedList
             Console.Clear();
 
             Console.WriteLine("Length Method");
-            Console.WriteLine($"linkedlist should contain the following values in nodes: {inputNum}, 55, 87, 33, 42");
+            Console.WriteLine("linkedlist should contain the following values in nodes: 87, 55, 33, 42");
             Console.WriteLine("int length = linkedlist.Length()");
             int length = linkedlist.Length();
             Console.WriteLine($"length: {length}");
@@ -60,7 +78,7 @@ namespace LinkedList
             Console.ReadLine();
             Console.Clear();
             Console.WriteLine("Print Method");
-            Console.WriteLine($"linkedlist should contain the following values in nodes: {inputNum}, 55, 87, 33, 42");
+            Console.WriteLine("linkedlist should contain the following values in nodes: 87, 55, 33, 42");
 
             Console.WriteLine("int[] array = linkedlist.Print();");
             int[] array = linkedlist.Print();

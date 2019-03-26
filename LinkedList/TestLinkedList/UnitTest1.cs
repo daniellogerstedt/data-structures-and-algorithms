@@ -102,5 +102,101 @@ namespace TestLinkedList
             Assert.Equal(expected, actual);
         }
 
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        public void TestAppendLinkedList(int expected)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(1);
+            Assert.Null(listToTest.Head.Next);
+            listToTest.Append(expected);
+            Assert.Equal(expected, listToTest.Head.Next.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertBeforeWithNullHead(int value, int before)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            Assert.Null(listToTest.Head);
+            listToTest.InsertBefore(value, before);
+            Assert.Equal(value, listToTest.Head.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertBeforeWithOneNode(int value, int before)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(before);
+            listToTest.InsertBefore(value, before);
+            Assert.Equal(value, listToTest.Head.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertBeforeWithMultipleNodes(int value, int before)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(before);
+            listToTest.Insert(5);
+            listToTest.InsertBefore(value, before);
+            Assert.Equal(value, listToTest.Head.Next.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertAfterWithNullHead(int value, int after)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            Assert.Null(listToTest.Head);
+            listToTest.InsertAfter(value, after);
+            Assert.Equal(value, listToTest.Head.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertAfterWithOneNode(int value, int after)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(after);
+            listToTest.InsertAfter(value, after);
+            Assert.Equal(value, listToTest.Head.Next.Value);
+        }
+
+        [Theory]
+        [InlineData(1, 2)]
+        [InlineData(2, 3)]
+        [InlineData(5, 4)]
+        [InlineData(1, 8)]
+        public void TestInsertAfterWithMultipleNodes(int value, int after)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(5);
+            listToTest.Insert(after);
+            listToTest.InsertAfter(value, after);
+            Assert.Equal(value, listToTest.Head.Next.Value);
+        }
+
+
+
     }
 }
