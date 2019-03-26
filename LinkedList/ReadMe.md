@@ -14,6 +14,9 @@ This is a C# implementation of a linked list. It instantiates the linked list in
 | Method | Summary | Big O Time | Big O Space | Example | 
 | :----------- | :----------- | :-------------: | :-------------: | :----------- |
 | Insert | Adds a new `Node` to the `Linked List` | O(1) | O(1) | myList.Insert(99) |
+| Append | Adds a new `Node` at the end of the `Linked List` | O(n) | O(1) | myList.Append(99) |
+| InsertBefore | Adds a new `Node` into the `Linked List` before the first `Node` containing a given value | O(n) | O(1) | myList.InsertBefore(99) |
+| InsertAfter | Adds a new `Node` into the `Linked List` after the first `Node` containing a given value | O(n) | O(1) | myList.InsertAfter(99) |
 | Includes | Takes in a value and returns a boolean if the value is in the `LinkedList` | O(n) | O(1) | myList.Includes(99) |
 | Length | Iterates over the list and returns an integer value for the length | O(n) | O(1) | myList.Length() |
 | Print | Prints the `Linked List` to the console | O(n) | O(n) | myList.Print() |
@@ -26,6 +29,18 @@ This is a C# implementation of a linked list. It instantiates the linked list in
 ##### Insert Method
 Insert first creates a new node using the value provided and the current head, it then replaces the current head with this new node. By doing this it causes the previous head to be the second node and the new node to take the place as the head.
 ![Insert Method](./assets/insert.PNG)
+
+##### Append Method
+Append first iterates to the end of the Linked List, then creates a new node containing the given value and places it at the end.
+![Append Method](./assets/append.PNG)
+
+##### InsertBefore Method
+InsertBefore first checks to see if the head is null, if so it Inserts a node at the head containing the value. It then checks to see if the node to place before is Included in the list, if not it places a new node at the end of the list with the value. Once it has determined the node is present it iterates to that node keeping track of the previous node as it does and places a node between the previous and node to place before.
+![Insert Method](./assets/insertbefore.PNG)
+
+##### InsertAfter Method
+InsertAfter first checks to see if the head is null, if so it Inserts a node at the head containing the value. It then checks to see if the node to place before is Included in the list, if not it places a new node at the end of the list with the value. Once it has determined the node is present it iterates to that node and places the new node after it.
+![Insert Method](./assets/insertafter.PNG)
 
 ##### Includes Method
 Includes first checks if the head is null and returns false if it is. After checking if head is null it looks at the first node for the value and then proceeds to iterate over the list and if it ever finds the value in the list it returns true. Returns false if it makes it to the end of the list without finding the value.
