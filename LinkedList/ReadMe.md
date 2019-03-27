@@ -17,6 +17,7 @@ This is a C# implementation of a linked list. It instantiates the linked list in
 | Append | Adds a new `Node` at the end of the `Linked List` | O(n) | O(1) | myList.Append(99) |
 | InsertBefore | Adds a new `Node` into the `Linked List` before the first `Node` containing a given value | O(n) | O(1) | myList.InsertBefore(99) |
 | InsertAfter | Adds a new `Node` into the `Linked List` after the first `Node` containing a given value | O(n) | O(1) | myList.InsertAfter(99) |
+| KthFromEnd | Locates and returns the node that is k distance from the end of the `LinkedList` | O(n) | O(1) | myList.KthFromEnd(2) |
 | Includes | Takes in a value and returns a boolean if the value is in the `LinkedList` | O(n) | O(1) | myList.Includes(99) |
 | Length | Iterates over the list and returns an integer value for the length | O(n) | O(1) | myList.Length() |
 | Print | Prints the `Linked List` to the console | O(n) | O(n) | myList.Print() |
@@ -42,6 +43,10 @@ InsertBefore first checks to see if the head is null, if so it Inserts a node at
 InsertAfter first checks to see if the head is null, if so it Inserts a node at the head containing the value. It then checks to see if the node to place before is Included in the list, if not it places a new node at the end of the list with the value. Once it has determined the node is present it iterates to that node and places the new node after it.
 ![Insert Method](./assets/insertafter.PNG)
 
+##### KthFromEnd Method
+Locates and returns the Kth node from the end, if it exists. In situations where the node doesn't exist it returns null.
+![KthFromEnd Method](./assets/kthfromend.PNG)
+
 ##### Includes Method
 Includes first checks if the head is null and returns false if it is. After checking if head is null it looks at the first node for the value and then proceeds to iterate over the list and if it ever finds the value in the list it returns true. Returns false if it makes it to the end of the list without finding the value.
 ![Includes Method](./assets/includes.PNG)
@@ -60,10 +65,17 @@ Print first calls the Length method to get the length, it then makes an array of
 
 ##### Challenge 06
 
-<img src="./assets/solutionpartone.JPG" height=500 />
-<img src="./assets/solutionparttwo.JPG" height=500 />
+<img src="./assets/solution06partone.JPG" height=500 />
+<img src="./assets/solution06parttwo.JPG" height=500 />
+
+
+##### Challenge 07
+
+<img src="./assets/solution07partone.JPG" height=500 />
+<img src="./assets/solution07parttwo.JPG" height=500 />
 
 ------------------------------
 
 ## Change Log
 1.1: Added Append, InsertBefore, and InsertAfter methods as part of Code Challenge 06
+1.2: Added KthFromEnd method as part of Code Challenge 07
