@@ -70,6 +70,18 @@ namespace TestLinkedList
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void TestKthFromEndNonExistentNode()
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(1);
+            listToTest.Insert(2);
+            listToTest.Insert(3);
+            listToTest.Insert(4);
+
+            Assert.Null(listToTest.KthFromEnd(5));
+        }
+
         [Theory]
         [InlineData(1, 2, 3, 2, true)]
         [InlineData(3, 2, 1, 5, false)]
