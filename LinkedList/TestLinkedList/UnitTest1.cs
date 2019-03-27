@@ -52,6 +52,25 @@ namespace TestLinkedList
         }
 
         [Theory]
+        [InlineData(2)]
+        [InlineData(1)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void TestKthFromEnd(int k)
+        {
+            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            listToTest.Insert(1);
+            listToTest.Insert(2);
+            listToTest.Insert(3);
+            listToTest.Insert(4);
+
+            int actual = listToTest.KthFromEnd(k).Value;
+            int expected = k;
+            
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
         [InlineData(1, 2, 3, 2, true)]
         [InlineData(3, 2, 1, 5, false)]
         [InlineData(3, 2, 1, 3, true)]
