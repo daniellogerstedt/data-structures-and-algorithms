@@ -68,6 +68,18 @@ namespace LinkedList
 
             Console.Clear();
 
+            Console.WriteLine("KthFromEnd Method");
+            Console.WriteLine("linkedlist should contain the following values in nodes: 87, 55, 33, 42");
+            Console.WriteLine("int KthValue = linkedlist.KthFromEnd(2).Value;");
+            int KthValue = linkedlist.KthFromEnd(2).Value;
+            Console.WriteLine($"KthValue should be 33, KthValue: {KthValue}");
+
+            Console.WriteLine("Press Enter to continue.");
+            Console.ReadLine();
+
+            Console.Clear();
+
+
             Console.WriteLine("Length Method");
             Console.WriteLine("linkedlist should contain the following values in nodes: 87, 55, 33, 42");
             Console.WriteLine("int length = linkedlist.Length()");
