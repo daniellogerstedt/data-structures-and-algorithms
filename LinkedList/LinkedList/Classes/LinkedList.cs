@@ -14,7 +14,7 @@ namespace LinkedList.Classes
         public LinkedList()
         {
 
-            this.Head = null;
+            Head = null;
 
         }
 
@@ -24,8 +24,8 @@ namespace LinkedList.Classes
         /// <param name="value">The value to be placed on the new node.</param>
         public void Insert(int value)
         {
-            Node newHead = new Node(value, this.Head);
-            this.Head = newHead;
+            Node newHead = new Node(value, Head);
+            Head = newHead;
         }
 
 
@@ -36,8 +36,8 @@ namespace LinkedList.Classes
         /// <returns>A boolean, true if the value provided is present in the linked list, false if not.</returns>
         public bool Includes(int value)
         {
-            if (this.Head == null) return false;
-            Node curr = this.Head;
+            if (Head == null) return false;
+            Node curr = Head;
             while (curr != null)
             {
                 if (curr.Value == value) return true;
@@ -53,8 +53,8 @@ namespace LinkedList.Classes
         /// <returns>The length of the linked list as an integer.</returns>
         public int Length()
         {
-            if (this.Head == null) return 0;
-            Node curr = this.Head;
+            if (Head == null) return 0;
+            Node curr = Head;
             int count = 0;
             while (curr != null)
             {
@@ -73,7 +73,7 @@ namespace LinkedList.Classes
         {
             int len = Length();
             int[] arr = new int[len];
-            Node curr = this.Head;
+            Node curr = Head;
             int index = 0;
             while (curr != null)
             {
@@ -91,10 +91,10 @@ namespace LinkedList.Classes
         /// <param name="value">The value to place in the new Node.</param>
         public void Append(int value)
         {
-            if (this.Head == null) this.Head = new Node(value);
+            if (Head == null) Head = new Node(value);
             else
             {
-                Node curr = this.Head;
+                Node curr = Head;
                 while (curr.Next != null)
                 {
                     curr = curr.Next;
@@ -114,11 +114,11 @@ namespace LinkedList.Classes
             if (!Includes(before)) Append(value);
             else
             {
-                if (this.Head.Value == before) Insert(value);
+                if (Head.Value == before) Insert(value);
                 else
                 {
-                    Node curr = this.Head.Next;
-                    Node prev = this.Head;
+                    Node curr = Head.Next;
+                    Node prev = Head;
                     while (curr.Value != before)
                     {
                         prev = curr;
@@ -141,13 +141,31 @@ namespace LinkedList.Classes
             if (!Includes(after)) Append(value);
             else
             {
-                Node curr = this.Head;
+                Node curr = Head;
                 while (curr.Value != after)
                 {
                     curr = curr.Next;
                 }
                 curr.Next = new Node(value, curr.Next);
             }
+        }
+
+
+        public Node KthFromEnd(int k)
+        {
+            Node curr = Head;
+            for (int i = 0; i < k; i++)
+            {
+                if (curr == null) return null;
+                curr = curr.Next;
+            }
+            Node kthNode = Head;
+            while (curr != null)
+            {
+                curr = curr.Next;
+                kthNode = kthNode.Next;
+            }
+            return kthNode;
         }
 
 
