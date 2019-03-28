@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LinkedList.Classes
+namespace SLinkedList.Classes
 {
     public class LinkedList
     {
@@ -150,7 +150,11 @@ namespace LinkedList.Classes
             }
         }
 
-
+        /// <summary>
+        /// Locates and returns the Node that is k from the end of the Linked List
+        /// </summary>
+        /// <param name="k">How far from the end of the list to locate the node.</param>
+        /// <returns>The Node that is K from the end of the list.</returns>
         public Node KthFromEnd(int k)
         {
             Node curr = Head;
@@ -167,7 +171,5 @@ namespace LinkedList.Classes
             }
             return kthNode;
         }
-
-
     }
 }

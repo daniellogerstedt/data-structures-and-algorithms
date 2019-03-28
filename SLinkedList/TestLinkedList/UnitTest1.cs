@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using LinkedList;
+using SLinkedList.Classes;
 
 namespace TestLinkedList
 
@@ -17,7 +17,7 @@ namespace TestLinkedList
         [Fact]
         public void TestLinkedListInstantiation()
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             Assert.Null(listToTest.Head);
         }
 
@@ -29,7 +29,7 @@ namespace TestLinkedList
         [InlineData(151)]
         public void TestAddNodeToLinkedList(int value)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(value);
             Assert.Equal(value, listToTest.Head.Value);
         }
@@ -40,7 +40,7 @@ namespace TestLinkedList
         [InlineData(200, 100, 300)]
         public void TestMultipleInsertions(int v1, int v2, int v3)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(v1);
             listToTest.Insert(v2);
             listToTest.Insert(v3);
@@ -58,7 +58,7 @@ namespace TestLinkedList
         [InlineData(4)]
         public void TestKthFromEnd(int k)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(1);
             listToTest.Insert(2);
             listToTest.Insert(3);
@@ -73,7 +73,7 @@ namespace TestLinkedList
         [Fact]
         public void TestKthFromEndNonExistentNode()
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(1);
             listToTest.Insert(2);
             listToTest.Insert(3);
@@ -89,7 +89,7 @@ namespace TestLinkedList
         [InlineData(200, 100, 300, 300, true)]
         public void TestLinkedListIncludes(int v1, int v2, int v3, int search, bool expected)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(v1);
             listToTest.Insert(v2);
             listToTest.Insert(v3);
@@ -103,7 +103,7 @@ namespace TestLinkedList
         [Fact]
         public void TestLengthOfLinkedList()
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(0);
             listToTest.Insert(0);
             listToTest.Insert(0);
@@ -121,7 +121,7 @@ namespace TestLinkedList
         [Fact]
         public void TestPrintLinkedList()
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(1);
             listToTest.Insert(2);
             listToTest.Insert(3);
@@ -140,7 +140,7 @@ namespace TestLinkedList
         [InlineData(5)]
         public void TestAppendLinkedList(int expected)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(1);
             Assert.Null(listToTest.Head.Next);
             listToTest.Append(expected);
@@ -154,7 +154,7 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertBeforeWithNullHead(int value, int before)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             Assert.Null(listToTest.Head);
             listToTest.InsertBefore(value, before);
             Assert.Equal(value, listToTest.Head.Value);
@@ -167,7 +167,7 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertBeforeWithOneNode(int value, int before)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(before);
             listToTest.InsertBefore(value, before);
             Assert.Equal(value, listToTest.Head.Value);
@@ -180,7 +180,7 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertBeforeWithMultipleNodes(int value, int before)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(before);
             listToTest.Insert(5);
             listToTest.InsertBefore(value, before);
@@ -194,7 +194,7 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertAfterWithNullHead(int value, int after)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             Assert.Null(listToTest.Head);
             listToTest.InsertAfter(value, after);
             Assert.Equal(value, listToTest.Head.Value);
@@ -207,7 +207,7 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertAfterWithOneNode(int value, int after)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(after);
             listToTest.InsertAfter(value, after);
             Assert.Equal(value, listToTest.Head.Next.Value);
@@ -220,14 +220,11 @@ namespace TestLinkedList
         [InlineData(1, 8)]
         public void TestInsertAfterWithMultipleNodes(int value, int after)
         {
-            LinkedList.Classes.LinkedList listToTest = new LinkedList.Classes.LinkedList();
+            LinkedList listToTest = new LinkedList();
             listToTest.Insert(5);
             listToTest.Insert(after);
             listToTest.InsertAfter(value, after);
             Assert.Equal(value, listToTest.Head.Next.Value);
         }
-
-
-
     }
 }
