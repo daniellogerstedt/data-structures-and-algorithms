@@ -17,8 +17,8 @@ namespace TestStacksAndQueues
         public void TestEmptyQueue()
         {
             Queue<string> queue = new Queue<string>();
-            Assert.Null(queue.Front.Top);
-            Assert.Null(queue.Back.Top);
+            Assert.Null(queue.Front);
+            Assert.Null(queue.Back);
         }
 
         [Fact]
@@ -52,14 +52,24 @@ namespace TestStacksAndQueues
         }
 
         [Fact]
-        public void TestEnqueue()
+        public void TestEnqueueValue()
         {
             Queue<string> queue = new Queue<string>();
-            Assert.Null(queue.Front.Top);
-            Assert.Null(queue.Back.Top);
+            Assert.Null(queue.Front);
+            Assert.Null(queue.Back);
             queue.Enqueue("Test");
-            Assert.Null(queue.Front.Top);
-            Assert.Equal("Test", queue.Back.Top.Data);
+            Assert.Equal("Test", queue.Front.Data);
+        }
+
+        [Fact]
+        public void TestEnqueueNode()
+        {
+            Queue<string> queue = new Queue<string>();
+            Assert.Null(queue.Front);
+            Assert.Null(queue.Back);
+            Node<string> node = new Node<string> { Next = null, Data = "Test" };
+            queue.Enqueue(node);
+            Assert.Equal(node, queue.Front);
         }
 
         [Fact]
@@ -68,8 +78,8 @@ namespace TestStacksAndQueues
             Queue<string> queue = new Queue<string>();
             queue.Enqueue("Test");
             Assert.Equal("Test", queue.Dequeue().Data);
-            Assert.Null(queue.Front.Top);
-            Assert.Null(queue.Back.Top);
+            Assert.Null(queue.Front);
+            Assert.Null(queue.Back);
         }
 
         [Fact]
@@ -89,7 +99,7 @@ namespace TestStacksAndQueues
             Queue<string> queue = new Queue<string>();
             queue.Enqueue("Test");
             Assert.Equal("Test", queue.Peek().Data);
-            Assert.NotNull(queue.Front.Top);
+            Assert.NotNull(queue.Front);
         }
 
 
