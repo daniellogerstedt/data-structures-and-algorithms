@@ -9,3 +9,4 @@ This repository is a collection of different data structure and algorithm code c
 * [Binary Search of Arrays](./BinarySearch/ReadMe.md)
 * [LinkedList](./SLinkedList/ReadMe.md)
 * [MergeLists](./LLMerge/ReadMe.md)
+* [StacksAndQueues](./StacksAndQueues/ReadMe.md)
