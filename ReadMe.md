@@ -10,3 +10,4 @@ This repository is a collection of different data structure and algorithm code c
 * [LinkedList](./SLinkedList/ReadMe.md)
 * [MergeLists](./LLMerge/ReadMe.md)
 * [StacksAndQueues](./StacksAndQueues/ReadMe.md)
+* [QueueWithStacks](./QueueWithStacks/ReadMe.md)
