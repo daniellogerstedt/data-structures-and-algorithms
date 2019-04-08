@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Trees.Classes
 {
-    class BinaryTree<T>
+    public class BinaryTree<T>
     {
-        Node<T> Root { get; set; }
+        public Node<T> Root { get; set; }
 
         /// <summary>
         /// Instantiates a list and calls the pre order traversal method using the Root and the list.
@@ -15,7 +15,7 @@ namespace Trees.Classes
         public List<T> PreOrder()
         {
             List<T> list = new List<T>();
-            _PreOrder(Root, list);
+            PreOrder(Root, list);
             return list;
         }
 
@@ -24,12 +24,12 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">The current node to look at.</param>
         /// <param name="list">The list to be filled for the outer method.</param>
-        private void _PreOrder(Node<T> root, List<T> list)
+        private void PreOrder(Node<T> root, List<T> list)
         {
             if (root == null || list == null) return;
             list.Add(root.Data);
-            _PreOrder(root.Left, list);
-            _PreOrder(root.Right, list);
+            PreOrder(root.Left, list);
+            PreOrder(root.Right, list);
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Trees.Classes
         public List<T> InOrder()
         {
             List<T> list = new List<T>();
-            _InOrder(Root, list);
+            InOrder(Root, list);
             return list;
         }
 
@@ -48,12 +48,12 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">The current node to look at.</param>
         /// <param name="list">The list to add node data into.</param>
-        private void _InOrder(Node<T> root, List<T> list)
+        private void InOrder(Node<T> root, List<T> list)
         {
             if (root == null || list == null) return;
-            _InOrder(root.Left, list);
+            InOrder(root.Left, list);
             list.Add(root.Data);
-            _InOrder(root.Right, list);
+            InOrder(root.Right, list);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Trees.Classes
         public List<T> PostOrder()
         {
             List<T> list = new List<T>();
-            _PostOrder(Root, list);
+            PostOrder(Root, list);
             return list;
         }
 
@@ -72,11 +72,11 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root">The current node to look at.</param>
         /// <param name="list">The list to add node data into.</param>
-        private void _PostOrder(Node<T> root, List<T> list)
+        private void PostOrder(Node<T> root, List<T> list)
         {
             if (root == null || list == null) return;
-            _PostOrder(root.Left, list);
-            _PostOrder(root.Right, list);
+            PostOrder(root.Left, list);
+            PostOrder(root.Right, list);
             list.Add(root.Data);
         }
     }
