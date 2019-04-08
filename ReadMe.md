@@ -11,3 +11,6 @@ This repository is a collection of different data structure and algorithm code c
 * [MergeLists](./LLMerge/ReadMe.md)
 * [StacksAndQueues](./StacksAndQueues/ReadMe.md)
 * [QueueWithStacks](./QueueWithStacks/ReadMe.md)
+* [FIFOAnimalShelter](./FIFOAnimalShelter/ReadMe.md)
+* [MultiBracketValidation](./MultiBracketValidation/ReadMe.md)
+* [Trees](./Trees/ReadMe.md)
