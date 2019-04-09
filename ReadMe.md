@@ -14,3 +14,4 @@ This repository is a collection of different data structure and algorithm code c
 * [FIFOAnimalShelter](./FIFOAnimalShelter/ReadMe.md)
 * [MultiBracketValidation](./MultiBracketValidation/ReadMe.md)
 * [Trees](./Trees/ReadMe.md)
+* [FizzBuzzTree](./FizzBuzzTree/ReadMe.md)
