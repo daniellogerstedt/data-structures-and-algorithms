@@ -31,3 +31,10 @@ PostOrder traversal moves across the tree calling itself on the left node and ri
 AddNode searches the tree for the location the node should be and then adds it into the tree.
 
 Contains searches the tree for the node and if found returns true, otherwise returns false.
+
+
+## Solution Images
+
+Find Maximum
+
+![Solution Find Maximum](./assets/findmaxsolution.jpg)
