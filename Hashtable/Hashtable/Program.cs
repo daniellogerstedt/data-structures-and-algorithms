@@ -10,6 +10,11 @@ namespace Hashtable
 
         }
 
+        /// <summary>
+        /// Takes in a string and returns the first repeated word within that string.
+        /// </summary>
+        /// <param name="str">The string to be checked.</param>
+        /// <returns>The first repeated word</returns>
         public static string RepeatedWord(string str)
         {
             char[] delimiters = { ' ', ',', '.', '\\', ';', ':', '/', '<', '>', '"', '&', '*', '(', ')', '!', '@', '#', '$', '%', '^', '-', '_', '+', '=', '\'', '[', ']',  '|', '`', '~', '\n', '\t' };
