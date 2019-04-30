@@ -14,6 +14,10 @@ Contains should return a boolean value of whether an item is in the HashTable
 
 Hash should take a key and return an int based on that key
 
+#### Challenge 31
+
+Implement a method that returns the first repeated word in a string.
+
 ## Approach & Efficiency
 
 | Method | Summary | Big O Time | Big O Space | Example | 
@@ -22,6 +26,7 @@ Hash should take a key and return an int based on that key
 | Get | Retrieves a value from the HashTable | O(1) | O(1) | HashTable.Get("key") |
 | Contains | Checks if a key is in the HashTable | O(1) | O(1) | HashTable.Contains("key") |
 | Hash | Finds the int value associated with a key | O(1) | O(1) | HashTable.Hash("key") |
+| Repeated Word | Takes in a string and returns the first repeated word. | O(log n) | O(1) | RepeatedWord("words list of words") |
 
 ## API
 
@@ -33,9 +38,18 @@ Contains takes in a key. It then hashes the key and checks whether an Entry with
 
 Hash takes in a key. It then creates an int value based on the provided key and returns it.
 
+Repeated Word takes in a string and breaks the string apart looking through the words to return the first repeated word.
+
 ## Files
 
 [Table Code](./Hashtable/Classes/Table.cs)
 [Entry Code](./Hashtable/Classes/Entry.cs)
 
 [Tests](./HashtableTests/UnitTest1.cs)
+
+
+## Solution Images
+
+#### Challenge 31
+
+![Challenge 31](./Assets/Challenge31.JPG)

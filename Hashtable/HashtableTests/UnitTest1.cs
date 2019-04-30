@@ -1,4 +1,5 @@
 using Hashtable.Classes;
+using static Hashtable.Program;
 using System;
 using Xunit;
 
@@ -6,6 +7,23 @@ namespace HashtableTests
 {
     public class UnitTest1
     {
+        [Fact]
+        public void testRepeatedWord()
+        {
+            string test = "test/string]test,string,this&is(a)test";
+            string expected = "test";
+            string actual = RepeatedWord(test);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void testRepeatedWordNull()
+        {
+            string test = "test/string]null}value";
+            string actual = RepeatedWord(test);
+            Assert.Null(actual);
+        }
+
         [Fact]
         public void testHash()
         {
