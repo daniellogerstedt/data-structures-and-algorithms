@@ -1,7 +1,9 @@
 using Hashtable.Classes;
 using static Hashtable.Program;
+using Trees.Classes;
 using System;
 using Xunit;
+using System.Collections.Generic;
 
 namespace HashtableTests
 {
@@ -22,6 +24,63 @@ namespace HashtableTests
             string test = "test/string]null}value";
             string actual = RepeatedWord(test);
             Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testRepeatedWordNoString()
+        {
+            string actual = RepeatedWord(null);
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionNoTreeOne()
+        {
+            List<int> actual = TreeIntersection(new BinaryTree<int>(), null);
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionNoTreeTwo()
+        {
+            List<int> actual = TreeIntersection(null, new BinaryTree<int>());
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionNoRootOne()
+        {
+            BinaryTree<int> one = new BinaryTree<int>();
+            BinaryTree<int> two = new BinaryTree<int> { Root = new Node<int> { Data = 1 } };
+            List<int> actual = TreeIntersection(one, two);
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionNoRootTwo()
+        {
+            BinaryTree<int> one = new BinaryTree<int> { Root = new Node<int> { Data = 1 } };
+            BinaryTree<int> two = new BinaryTree<int>();
+            List<int> actual = TreeIntersection(one, two);
+            Assert.Null(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionNoShared()
+        {
+            BinaryTree<int> one = new BinaryTree<int> { Root = new Node<int> { Data = 1, Right = new Node<int> { Data = 3 } } };
+            BinaryTree<int> two = new BinaryTree<int> { Root = new Node<int> { Data = 2, Right = new Node<int> { Data = 4 } } };
+            List<int> actual = TreeIntersection(one, two);
+            Assert.Empty(actual);
+        }
+
+        [Fact]
+        public void testTreeIntersectionShares()
+        {
+            BinaryTree<int> one = new BinaryTree<int> { Root = new Node<int> { Data = 1, Right = new Node<int> { Data = 4 } } };
+            BinaryTree<int> two = new BinaryTree<int> { Root = new Node<int> { Data = 2, Right = new Node<int> { Data = 4 } } };
+            List<int> actual = TreeIntersection(one, two);
+            Assert.Contains(4, actual);
         }
 
         [Fact]

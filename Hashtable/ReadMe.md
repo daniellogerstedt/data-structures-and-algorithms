@@ -18,6 +18,10 @@ Hash should take a key and return an int based on that key
 
 Implement a method that returns the first repeated word in a string.
 
+#### Challenge 32
+
+Implement a method that compares two trees and returns a set of shared values.
+
 ## Approach & Efficiency
 
 | Method | Summary | Big O Time | Big O Space | Example | 
@@ -27,6 +31,7 @@ Implement a method that returns the first repeated word in a string.
 | Contains | Checks if a key is in the HashTable | O(1) | O(1) | HashTable.Contains("key") |
 | Hash | Finds the int value associated with a key | O(1) | O(1) | HashTable.Hash("key") |
 | Repeated Word | Takes in a string and returns the first repeated word. | O(log n) | O(1) | RepeatedWord("words list of words") |
+| Tree Intersection | Takes in two binary trees and finds common values | O(n) | O(n) | TreeIntersection(treeOne, treeTwo) |
 
 ## API
 
@@ -39,6 +44,8 @@ Contains takes in a key. It then hashes the key and checks whether an Entry with
 Hash takes in a key. It then creates an int value based on the provided key and returns it.
 
 Repeated Word takes in a string and breaks the string apart looking through the words to return the first repeated word.
+
+Tree Intersection takes in two binary trees and iterates over them returning the shared values between both trees.
 
 ## Files
 
@@ -53,3 +60,7 @@ Repeated Word takes in a string and breaks the string apart looking through the 
 #### Challenge 31
 
 ![Challenge 31](./Assets/Challenge31.JPG)
+
+#### Challenge 32
+
+![Challenge 32](./Assets/Challenge32.JPG)
