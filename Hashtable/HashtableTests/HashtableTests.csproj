@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Hashtable\Hashtable.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Trees">
+      <HintPath>..\..\Trees\Trees\bin\Debug\netcoreapp2.2\Trees.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
