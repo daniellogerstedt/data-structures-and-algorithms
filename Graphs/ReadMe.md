@@ -18,7 +18,9 @@ This is a C# implementation of a graph. It contains methods to add nodes and edg
 | Get Edges | Gets the adjacency list for a specific vertex node | O(1) | O(1) | Graph.GetEdges(Vertex) |
 | Get Size | Gets the graph size | O(1) | O(1) | Graph.GetSize() |
 
+## Challenge 38
 
+![Challenge 38 Image](./assets/challenge38.jpg)
 
 ------------------------------
 
